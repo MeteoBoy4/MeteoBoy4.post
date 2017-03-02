@@ -7,7 +7,7 @@ branches:
 
 before_install:
   - cd ..
-  - git clone --depth=50 --branch=master https://github.com/MeteoBoy4/MeteoBoy4.github.io.git
+  - git clone --depth=50 --branch=source https://github.com/MeteoBoy4/MeteoBoy4.github.io.git
   - cd MeteoBoy4.github.io
   - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
   - git submodule update --init --recursive --remote
