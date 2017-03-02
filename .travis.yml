@@ -22,7 +22,7 @@ install:
   - npm install
 
 script:
-  - hexo generate
+  - hexo generate --silent
 
 after_success:
   - git config --global user.name "MeteoBoy4"
