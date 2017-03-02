@@ -6,16 +6,16 @@ branches:
   - master
 
 before_install:
-  - cd ..
-  - git clone --depth=50 --branch=source https://github.com/MeteoBoy4/MeteoBoy4.github.io.git
-  - cd MeteoBoy4.github.io
-  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
-  - git submodule update --init --recursive --remote
   - openssl aes-256-cbc -K $encrypted_8223a4202629_key -iv $encrypted_8223a4202629_iv -in ./.travis/id_rsa.enc -out ~/.ssh/id_rsa -d
   - chmod 600 ~/.ssh/id_rsa
   - eval $(ssh-agent)
   - ssh-add ~/.ssh/id_rsa
   - cp .travis/ssh_config ~/.ssh/config
+  - cd ..
+  - git clone --depth=50 --branch=source https://github.com/MeteoBoy4/MeteoBoy4.github.io.git
+  - cd MeteoBoy4.github.io
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - git submodule update --init --recursive --remote
   - npm install -g hexo-cli
 
 install:
