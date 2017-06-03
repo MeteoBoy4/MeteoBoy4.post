@@ -19,22 +19,22 @@ ERA-Interim是欧洲中心一套再分析资料，鉴于欧洲中心在数字天
 首先参考[气象家园：夏朗的芒果][]，使用Python脚本下载高空场和地面场变量（其将需要的下载量压缩到了最小），并下载了不随时间变化的geopotential.grib和landsea-mask.grib（保持四个文件分辨率一致）。
 
 其次也是按照上述帖子，将ungrib/Variable_Tables/Vtable.ERA-interim.pl链接到WPS目录下，分别对高空场和地面场进行ungrib，PREFIX分别命名为‘3D’与‘SFC’；然后将start_date与end_date改成1989-01-01_12（这是两个不随时间变化的场所带自描述的时间），将PREFIX分别改为‘Z’与‘LSM’，再次ungrib；最后修改namelist.wps为
-```
-constants_name = 'LSM:1989-01-01_12', 'Z:1989-01-01_12',
-fg_name = '3D','SFC',
-```
+
+	constants_name = 'LSM:1989-01-01_12', 'Z:1989-01-01_12',
+	fg_name = '3D','SFC',
+
 然后执行metgrib.exe，生成对应的met_em.nc
 
 ## 错误
 
 在进入WRF的时候，real.exe报以下错误
 
-```
-----------FATAL CALLED--------------
-FATAL CALLED FROM FILE: <stdin> LINE: 2948
-mismatch_landmask_ivgtyp
-------------------------------------
-```
+
+	----------FATAL CALLED--------------
+	FATAL CALLED FROM FILE: <stdin> LINE: 2948
+	mismatch_landmask_ivgtyp
+	------------------------------------
+
 
 我一度怀疑是一开始没有并入不随时间变化的两个场，[Computering.io][]也证实了这两个场很重要（包括后面提到的SST，如果需要更新的话也需要包括进来）。
 
@@ -48,15 +48,15 @@ Taking a look to the code and the errors I figured out that the problem was the 
 
 但是我不甘心将SST移出驱动场，于是顺着[wrf-users的mailing list][]发现想要保留SST可以，但是需要修改METGRID table。于是我又找到了[/dav/null][]的文章，里面指明了修改METGRID.TBL的办法：
 
-```
-SST
-  interp_option=sixteen_pt+four_pt+wt_average_4pt+wt_average_16pt+search
-  missing_value=-1.E30
-  masked=land
-  interp_mark=LANDMASK(1)
-  fill_missing=0.
-  flag_in_output=FLAG_SST 
-```
+
+	SST
+	  interp_option=sixteen_pt+four_pt+wt_average_4pt+wt_average_16pt+search
+	  missing_value=-1.E30
+	  masked=land
+	  interp_mark=LANDMASK(1)
+	  fill_missing=0.
+	  flag_in_output=FLAG_SST 
+
 
 经过这样修改后的SST场（在met_em.nc中）不仅局限在大洋上，而且在内陆的河面、湖面上也会进行插值，从而得到正确的插值结果。
 
