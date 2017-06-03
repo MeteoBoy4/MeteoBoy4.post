@@ -29,7 +29,7 @@ Hello World！欢迎来到MeteoBoy4的个人独立博客。
 
 
 
-欢迎关于和支持MeteoBoy4！
+欢迎关心和支持MeteoBoy4！
 
 
 [Node.js]: https://nodejs.org
