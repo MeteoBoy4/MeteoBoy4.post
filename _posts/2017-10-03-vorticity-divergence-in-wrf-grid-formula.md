@@ -100,7 +100,7 @@ END DO
 
 ## 参考网站
 
-[wrf-python][]
+[wrf-python][]、[南信大段明铿老师][]课件
 
 特别感谢南京大学的[weinihou][]的答疑解惑和耐心指导，没有你便不会有这篇博客。
 
@@ -111,3 +111,4 @@ END DO
 [正交曲线坐标系]: https://en.wikipedia.org/wiki/Curvilinear_coordinates
 [wrf-python]: https://github.com/NCAR/wrf-python/blob/develop/fortran/wrf_pvo.f90
 [weinihou]: https://github.com/weinihou
+[南信大段明铿老师]: https://baike.baidu.com/item/%E6%AE%B5%E6%98%8E%E9%93%BF/16543016?fr=aladdin
