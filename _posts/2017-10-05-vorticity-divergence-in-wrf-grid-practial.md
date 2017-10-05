@@ -1,7 +1,7 @@
 ---
 title: WRF格点下计算涡度散度谜团——操作篇
 date: 2017-10-05 14:41:37
-tags: [NCL, WRF, 诊断分析]
+tags: [Fortran, NCL, WRF, 诊断分析]
 ---
 
 利用NCL为工具，比较了三种不同方法计算WRF输出风场对应的散度。
@@ -68,8 +68,20 @@ NCL的array的coordinate subscripts并不做插值，也就是说，如果coordi
 
 关于为何第二种方法地形在高原平台上比较准而在南坡缺测过多的原因：可以看到在高原的形状（数据缺测的形状位置）上，第二种方法在高原主体比较准确，但是在南坡缺测值过多，第三种方法则正好相反。直接在模式面上算（第一种方法）一定是缺测最少的（原数据就没有缺测）；后两种方法，插值到等压面大家是一样的，第二种方法最后一步是将凡是用到的u,v有缺测的div就赋予缺测（Fortran中），而我怀疑uv2dv_cfd是尽量保留不要缺测，所以它在地形交界处的地形比用第二种方法细节更多。
 
+</br> 
+## 关于在NCL中使用Fortran90子函数
 
+在NCL中使用Fortran90子函数（procedure与function均可）其实很简单，Fortran中按照往常习惯编写就好，不用加什么特别的注释。然后需要写一个stub文件，把Fortran子函数的接口和传入传出的变量声明部分写好，头尾加上C NCLFORSTART与C NCLEND，然后使用[WRAPIT][]命令行做一个.so的库文件
 
+	WRAPIT stub文件 Fortran90文件
+	
+这样便可以在NCL中使用这个Fortran90子函数了。只需要在NCL脚本开头用external给这个库文件起个别名，用的时候采用
+
+	别名::Fortran90函数名
+	
+就可以了！
+
+和f2py一样，NCL（Python）中数组最右侧（row-major）循环最快，Fortran数组则是最左侧循环最快（column-major），但是在编写的时候不用考虑这个问题，Fortran中将最左侧理解为经度，NCL中将最右侧理解为经度，WRAPIT会自动给你互换这些数字在数组中的对应位置。
 
 
 
@@ -80,3 +92,4 @@ NCL的array的coordinate subscripts并不做插值，也就是说，如果coordi
 [上一篇博客]: http://www.meteoboy.com/vorticity-divergence-in-wrf-grid-formula.html
 [compare]: /images/divergence_compare.png
 [wrf_user_intrp3d]: http://ncl.ucar.edu/Document/Functions/WRF_arw/wrf_user_intrp3d.shtml
+[WRAPIT]: http://ncl.ucar.edu/Document/Tools/WRAPIT.shtml
