@@ -1,7 +1,7 @@
 ---
 title: WRFDA四维变分同化降水资料
 date: 2017-10-05 21:22:30
-tags: [Python, WRFDA, 同化]
+tags: [同化, WRFDA, Python]
 ---
 
 介绍了利用WRFDA的四维变分同化（4DVAR）来同化降水资料的流程。

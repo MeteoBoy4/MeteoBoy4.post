@@ -1,7 +1,7 @@
 ---
 title: WRF格点下计算涡度散度谜团——操作篇
 date: 2017-10-05 14:41:37
-tags: [Fortran, NCL, WRF, 诊断分析]
+tags: [诊断分析, WRF, NCL, Fortran]
 ---
 
 利用NCL为工具，比较了三种不同方法计算WRF输出风场对应的散度。

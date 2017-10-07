@@ -1,7 +1,7 @@
 ---
 title: WRF格点下计算涡度散度谜团——公式篇
 date: 2017-10-03 17:24:08
-tags: [Fortran, WRF, 诊断分析]
+tags: [诊断分析, WRF, Fortran]
 ---
 描述了WRF原生格点下计算涡度散度的迷惑和思考。
 
