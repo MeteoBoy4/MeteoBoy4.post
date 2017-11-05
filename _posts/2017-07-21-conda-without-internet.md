@@ -53,7 +53,7 @@ conda search -c file://Path_to_your_channel/repo.continuum.io/pkgs/free --overri
 conda update (install) -c file://Path_to_your_channel/repo.continuum.io/pkgs/free --override-channels --offline 包名称
 ```
 
-注意到repo等路径是你安装官网的路径结构下载下来的结果，而指定不用深入到构架（linx64）目录下，系统会自动检测。
+注意到repo等路径是你安装官网的路径结构下载下来的结果，而指定不用深入到构架（linux64）目录下，系统会自动检测。
 
 如果下次想要更新本地库，则可以再用rsnyc重复下上述过程。
 
@@ -66,7 +66,7 @@ conda update (install) -c file://Path_to_your_channel/repo.continuum.io/pkgs/fre
 	channels:
 	  - file:///Path_to_your_channel/repo.continuum.io/pkgs/free
 	 
-	 offline: Ture
+	 offline: True
 	 
 以后再要安装（更新）时像平时那样即可（conda install/update 包名称）。
 
