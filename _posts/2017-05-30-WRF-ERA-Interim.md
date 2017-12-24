@@ -53,7 +53,7 @@ Taking a look to the code and the errors I figured out that the problem was the 
 	  interp_option=sixteen_pt+four_pt+wt_average_4pt+wt_average_16pt+search
 	  missing_value=-1.E30
 	  masked=land
-	  interp_mark=LANDMASK(1)
+	  interp_mask=LANDMASK(1)
 	  fill_missing=0.
 	  flag_in_output=FLAG_SST 
 
