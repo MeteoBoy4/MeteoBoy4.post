@@ -47,7 +47,7 @@ $$m = \frac{WRF格距}{地球球面距离}$$
 \frac{\partial(H_3H_1u_2)}{\partial q_2})
 \end{equation}
 
-这里值得注意的是，在垂直方向上未做投影，故$H_3=0$。而WRF中*Lambert conformal，polar stereographic，和Mercator*投影是**各向同性**的，即一个格点上x、y方向的地图放大系数是相同的，故$H_1 = H_2$。
+这里值得注意的是，在垂直方向上未做投影，故$H_3=1$。而WRF中*Lambert conformal，polar stereographic，和Mercator*投影是**各向同性**的，即一个格点上x、y方向的地图放大系数是相同的，故$H_1 = H_2$。
 
 ## 交错格点
 
