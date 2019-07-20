@@ -1,7 +1,7 @@
 ---
 title: Hello World
 date: 2017-03-04 20:30:00
-updated: 2019-07-20 16:50:00
+updated: 2019-07-20 17:40:00
 author: MeteoBoy4
 categories: 自说自话
 tags: 博客
@@ -26,7 +26,7 @@ Hello World！欢迎来到MeteoBoy4的个人独立博客。
 ## 关于
 首次访问本博客的读者可能对于博客以及博主的一些信息感兴趣，这些可以在[关于][]页面中看到，本博客暂时**不开放**评论，如有兴趣与本人讨论的可以在博客首页侧边栏找到我的Email及其他联系方式。
 
-如果觉得本博客的内容对你有用，可以进入相应博文最后，通过多种方式捐赠本博客。
+如果觉得本博客的内容对你有用或者喜欢本博客，可以进入相应博文最后，通过多种方式捐赠本博客。
 
 
 
@@ -44,5 +44,5 @@ Hello World！欢迎来到MeteoBoy4的个人独立博客。
 [lotabout]: http://lotabout.github.io/
 [P_Chou]: http://www.pchou.info/
 [MOxFIVE]: http://moxfive.xyz/
-[Travis CI]: https://www.travis-ci.com/
+[Travis CI]: https://www.travis-ci.org/
 [关于]: http://www.meteoboy.com/about/
