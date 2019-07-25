@@ -51,12 +51,11 @@ scp haha:/path/to/your/file /local/path/
 ```
 
 
-参考网站：[nerderati][]、[serverfault][]、[man page][]
-
-
+参考网站：[nerderati][]、[serverfault][]、[man page][]、[key management][]
 
 
 
 [nerderati]: http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/
 [serverfault]: https://serverfault.com/questions/253313/ssh-hostname-returns-bad-owner-or-permissions-on-ssh-config
 [man page]: https://linux.die.net/man/5/ssh_config
+[key management]: https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement
