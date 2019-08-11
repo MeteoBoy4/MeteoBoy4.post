@@ -45,7 +45,8 @@ VS Code为大家准备了三种远程开发的功能类型，对应其[Remote De
 	"editor.multiCursorModifier": "alt",
 
 2. 接下来还可以在Command Palette（F1）打开**Remote-SSH: Open Configuration File...**来编辑本地的ssh config文件，具体做法参见{% post_link ssh-and-so-on %}。这样它们会自动出现在连接host的下拉框中。
-3. 打开远程的VS Code后再**Terminal > New Terminal**便会打开远程服务器上的终端，可以直接运行命令啦~当然debugging功能也会在远程运行，打开左侧的Explorer也可以像在本地一样查看文件、脚本、图像，配合插件还可以显示一些变量的概况等。
+3. 打开远程的VS Code后再**Terminal > New Terminal**便会打开远程服务器上的终端，可以直接运行命令啦~打开左侧的Explorer也可以像在本地一样查看文件、脚本、图像，配合插件还可以显示一些变量的概况等。
+4. 更重要的是，使用[Remote - SSH][]时，debug的功能和在本地几乎一模一样完全可用，不用在远程机器上进行任何安装！只需配置好launch.json文件，设置好你需要的breakpoint，logpoint，进行debug时便可在debug栏中查看、监测变量数值，甚至可以在debug终端上直接使用REPL功能进行表达式的数值输出。具体的debug功能参见[VS Code Debugging][]
 
 ![vs-code-remote](../images/vs-code-remote.png)
 
@@ -70,3 +71,4 @@ Enjoy it！
 [Installation of OpenSSH]: https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse
 [OpenSSH Key Management]: https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement
 [Ctrl + Click - Github issue]: https://github.com/Microsoft/vscode/issues/32143
+[VS Code Debugging]:https://code.visualstudio.com/docs/editor/debugging
